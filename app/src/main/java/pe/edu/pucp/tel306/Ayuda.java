@@ -1,7 +1,9 @@
 package pe.edu.pucp.tel306;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Ayuda extends AppCompatActivity {
 

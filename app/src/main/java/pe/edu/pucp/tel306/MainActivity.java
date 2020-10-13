@@ -17,6 +17,7 @@ import pe.edu.pucp.tel306.ViewModels.TempoViewModel;
 public class MainActivity extends AppCompatActivity {
     TextView temporizador = findViewById(R.id.temporizador);
     ImageView iniciarTempo=findViewById(R.id.play);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
         ViewModelProvider viewModelProvider = new ViewModelProvider(this);
         final TempoViewModel tempoViewModel = viewModelProvider.get(TempoViewModel.class);
+
+        iniciarTempo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tempoViewModel.iniciarTemporizador(temporizador);
+            }
+        });
 
 
 
@@ -38,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void iniciarTemporizadorMain (View view) {
-        ViewModelProvider viewModelProvider = new ViewModelProvider(this);
-        TempoViewModel tempoViewModel = viewModelProvider.get(TempoViewModel.class);
-        tempoViewModel.iniciarTemporizador(temporizador);
 
-    }
 
 }
