@@ -3,6 +3,7 @@ package pe.edu.pucp.tel306;
 
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -60,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
                         if (integer == 0) {
                             tempoViewModel.getTempo().setValue(STARTING_TIME);
                             tempoViewModel.iniciarDescanso();
+                            // if variable del reloj termina, se muestra este mensaje
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setTitle("Mensaje");
+                            builder.setMessage("Tiempo para un descanso");
+                            builder.setPositiveButton("Ok", null);
+
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
                         }
                         int minutos = integer / 60 ;
                         int segundos = integer % 60;
@@ -101,8 +110,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        //mensaje cuando termina el tiempo de descanso
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Mensaje");
+        builder2.setMessage("Here we go again");
+        builder2.setPositiveButton("Ok", null);
+        AlertDialog dialog2 = builder2.create();
+        dialog2.show();
 
 
+        AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
+        builder3.setTitle("Mensaje");
+        builder3.setMessage("Kate Winslet guarda su Oscar en el cuarto de baño " +
+                "para que sus invitados puedan sostenerlo e improvisar sus propios" +
+                " discursos de agradecimiento sin sentirse observados.");
+        builder3.setPositiveButton("Ok", null);
+        AlertDialog dialog3 = builder3.create();
+        dialog3.show();
 
     }
     private void updateCountDownText(){
