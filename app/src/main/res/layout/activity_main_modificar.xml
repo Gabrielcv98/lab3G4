@@ -15,38 +15,38 @@
         android:text="@string/editar"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCambios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextPomodoro"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="@string/pomodoro"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescanso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editTextDescanso"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="@string/descanso"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber3"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+        app:layout_constraintBottom_toTopOf="@+id/editTextCiclos"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPomodoro"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toStartOf="@+id/editTextPomodoro" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/editTextCiclos"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:layout_marginBottom="388dp"
@@ -59,13 +59,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCambios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="277dp"
         android:text="@string/guardar_cambios"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber3"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber3" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextCiclos"
+        app:layout_constraintStart_toStartOf="@+id/editTextCiclos" />
 
 </android.support.constraint.ConstraintLayout>
