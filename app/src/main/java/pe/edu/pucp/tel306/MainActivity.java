@@ -3,18 +3,24 @@ package pe.edu.pucp.tel306;
 
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Locale;
 
+import pe.edu.pucp.tel306.ViewModels.Help;
 import pe.edu.pucp.tel306.ViewModels.TempoViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             int numCiclos = 4;
                             tempoViewModel.getTempo().setValue(STARTING_TIME);
                             tempoViewModel.iniciarDescanso();
+
                             tempoViewModel.getDescanso().observe(MainActivity.this, new Observer<Integer>() {
                                 @Override
                                 public void onChanged(Integer integer) {
@@ -89,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
                                 ciclos.setText("ciclo" +  i  +  "de " + numCiclos );
                             }
                             i++;
+
+                            // if variable del reloj termina, se muestra este mensaje
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setTitle("Mensaje");
+                            builder.setMessage("Tiempo para un descanso");
+                            builder.setPositiveButton("Ok", null);
+
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+
                         }
                         int minutos = integer / 60 ;
                         int segundos = integer % 60;
@@ -129,18 +146,46 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         //iniciarTempo.setOnClickListener(new View.OnClickListener(){
 
 
 
+        //mensaje cuando termina el tiempo de descanso
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Mensaje");
+        builder2.setMessage("Here we go again");
+        builder2.setPositiveButton("Ok", null);
+        AlertDialog dialog2 = builder2.create();
+        dialog2.show();
 
 
+        AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
+        builder3.setTitle("Mensaje");
+        builder3.setMessage("Kate Winslet guarda su Oscar en el cuarto de baño " +
+                "para que sus invitados puedan sostenerlo e improvisar sus propios" +
+                " discursos de agradecimiento sin sentirse observados.");
+        builder3.setPositiveButton("Ok", null);
+        AlertDialog dialog3 = builder3.create();
+        dialog3.show();
 
     }
     private void updateCountDownText(){
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menubar,menu);
+        return true;
+    }
+
+
+    public void help(View view){
+        Intent intent = new Intent(MainActivity.this, Help.class);
+        int requestCode =1;
+        startActivityForResult(intent,requestCode);
+    }
+
 
 }
