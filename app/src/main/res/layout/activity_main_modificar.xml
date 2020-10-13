@@ -6,66 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityModificar">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="274dp"
-        android:text="@string/editar"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCambios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextPomodoro"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="@string/pomodoro"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDescanso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editTextDescanso"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:hint="@string/descanso"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCiclos"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPomodoro"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPomodoro" />
+            <EditText
+                android:id="@+id/editTextPomodoro"
+                android:layout_width="160dp"
+                android:layout_height="67dp"
+                android:layout_marginBottom="48dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/pomodoro"
+                android:inputType="number"
+                android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/editTextCiclos"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="388dp"
-        android:ems="10"
-        android:hint="@string/ciclos_pomodoro"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+            <EditText
+                android:id="@+id/editTextDescanso"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/descanso"
+                android:inputType="number"
+                android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/buttonCambios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="277dp"
-        android:text="@string/guardar_cambios"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCiclos"
-        app:layout_constraintStart_toStartOf="@+id/editTextCiclos" />
+            <EditText
+                android:id="@+id/editTextCiclos"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:ems="10"
+                android:hint="@string/ciclos_pomodoro"
+                android:inputType="number"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/buttonCambios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="152dp"
+                android:text="@string/guardar_cambios"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

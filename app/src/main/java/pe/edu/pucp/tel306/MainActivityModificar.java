@@ -18,8 +18,28 @@ public class MainActivityModificar extends AppCompatActivity {
         setContentView(R.layout.activity_main_modificar);
         setTitle("Editar");
 
-        Button buttoncambios = findViewById(R.id.buttonCambios);
+        if(savedInstanceState != null){
+            String pomodoroTexto = savedInstanceState.getString("pomodoro");
+            String descansoTexto = savedInstanceState.getString("descanso");
+            String cicloTexto = savedInstanceState.getString("ciclo");
 
+            if (pomodoroTexto != null){
+                EditText editTextPomo = findViewById(R.id.editTextPomodoro);
+                editTextPomo.setText(pomodoroTexto);
+            }
+            if (descansoTexto != null){
+                EditText editTextPomo = findViewById(R.id.editTextDescanso);
+                editTextPomo.setText(descansoTexto);
+            }
+            if (cicloTexto != null){
+                EditText editTextPomo = findViewById(R.id.editTextCiclos);
+                editTextPomo.setText(cicloTexto);
+            }
+
+        }
+
+
+        Button buttoncambios = findViewById(R.id.buttonCambios);
         buttoncambios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
