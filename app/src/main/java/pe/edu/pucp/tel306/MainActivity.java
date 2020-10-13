@@ -56,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
                         if (integer == 0) {
                             tempoViewModel.getTempo().setValue(STARTING_TIME);
                             tempoViewModel.iniciarDescanso();
+                            // if variable del reloj termina, se muestra este mensaje
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setTitle("Mensaje");
+                            builder.setMessage("Tiempo para un descanso");
+                            builder.setPositiveButton("Ok", null);
+
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
                         }
                         int minutos = integer / 60 ;
                         int segundos = integer % 60;
@@ -97,21 +105,13 @@ public class MainActivity extends AppCompatActivity {
         //iniciarTempo.setOnClickListener(new View.OnClickListener(){
 
 
-        // if variable del reloj termina, se muestra este mensaje
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Mensaje");
-        builder.setMessage("Tiempo para un descanso");
-        builder.setPositiveButton("Ok", null);
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
 
         //mensaje cuando termina el tiempo de descanso
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         builder2.setTitle("Mensaje");
         builder2.setMessage("Here we go again");
         builder2.setPositiveButton("Ok", null);
-        AlertDialog dialog2 = builder.create();
+        AlertDialog dialog2 = builder2.create();
         dialog2.show();
 
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 "para que sus invitados puedan sostenerlo e improvisar sus propios" +
                 " discursos de agradecimiento sin sentirse observados.");
         builder3.setPositiveButton("Ok", null);
-        AlertDialog dialog3 = builder.create();
+        AlertDialog dialog3 = builder3.create();
         dialog3.show();
 
     }
