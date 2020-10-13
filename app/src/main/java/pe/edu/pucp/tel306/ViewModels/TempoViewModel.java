@@ -17,10 +17,11 @@ public class TempoViewModel extends ViewModel {
     public void iniciarTemporizador(final TextView temporizador){
         if(thread == null){
 
-            new CountDownTimer(20000, 1000) {
+            new CountDownTimer(2500, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    temporizador.setText((int) (millisUntilFinished / 1000));
+                    temporizador.setText("" + millisUntilFinished / 1000);
+
                 }
 
                 @Override

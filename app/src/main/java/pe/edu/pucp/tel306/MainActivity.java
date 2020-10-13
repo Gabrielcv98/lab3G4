@@ -15,13 +15,15 @@ import android.widget.TextView;
 import pe.edu.pucp.tel306.ViewModels.TempoViewModel;
 
 public class MainActivity extends AppCompatActivity {
-    TextView temporizador = findViewById(R.id.temporizador);
-    ImageView iniciarTempo=findViewById(R.id.play);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final TextView temporizador = findViewById(R.id.temporizador);
+        ImageView iniciarTempo=findViewById(R.id.play);
 
         ViewModelProvider viewModelProvider = new ViewModelProvider(this);
         final TempoViewModel tempoViewModel = viewModelProvider.get(TempoViewModel.class);
