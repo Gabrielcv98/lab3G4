@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_temporizador_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity"></activity>
+
         <activity android:name=".Ayuda"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivityModificar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
