@@ -11,6 +11,8 @@ public class TempoViewModel extends ViewModel {
 
 
     private MutableLiveData<Integer> tempo = new MutableLiveData<>(1500);
+
+    private MutableLiveData<Integer> descanso = new MutableLiveData<>(300);
     private Thread thread = null;
 
 
@@ -51,6 +53,38 @@ public class TempoViewModel extends ViewModel {
 
 
     }
+    public void iniciarDescanso() {
+
+        if (getThread() == null) {
+
+            setThread(new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    int descansoLocal = getTempo().getValue();
+
+                    for (; descansoLocal >= 0; descansoLocal--) {
+                        Log.d("descansoApp", String.valueOf(descansoLocal));
+
+                        getDescanso().postValue(descansoLocal);
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            break;
+                        }
+                    }
+                    setThread(null);
+                    if (descansoLocal == 0) {
+                        getDescanso().postValue(descansoLocal);
+                    }
+                }
+            }));
+
+            getThread().start();
+        }
+    }
 
     public void detenerTemporizador(){
         if(thread != null){
@@ -72,5 +106,13 @@ public class TempoViewModel extends ViewModel {
 
     public void setThread(Thread thread) {
         this.thread = thread;
+    }
+
+    public MutableLiveData<Integer> getDescanso() {
+        return descanso;
+    }
+
+    public void setDescanso(MutableLiveData<Integer> descanso) {
+        this.descanso = descanso;
     }
 }

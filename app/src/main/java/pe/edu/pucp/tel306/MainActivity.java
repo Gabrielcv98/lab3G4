@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onChanged(Integer integer) {
                         if (integer == 0) {
                             tempoViewModel.getTempo().setValue(STARTING_TIME);
+                            tempoViewModel.iniciarDescanso();
                         }
                         int minutos = integer / 60 ;
                         int segundos = integer % 60;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 final TempoViewModel tempoViewModel = viewModelProvider.get(TempoViewModel.class);
                 tempoViewModel.detenerTemporizador();
                pausarTempo.setVisibility(View.INVISIBLE);
+               iniciarTempo.setVisibility(View.VISIBLE);
 
             }
         });
