@@ -47,15 +47,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/stringtiempodescanso"
+        android:id="@+id/descansotime"
         android:layout_width="140dp"
         android:layout_height="22dp"
         android:layout_marginTop="172dp"
+        android:layout_marginBottom="64dp"
         android:text="@string/tiempo_de_descanso"
+        app:layout_constraintBottom_toTopOf="@+id/temporizador"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/reiniciar"
@@ -70,7 +73,7 @@
         app:srcCompat="@drawable/ic_action_name_reiniciar" />
 
     <TextView
-        android:id="@+id/stringtiempopomodoro"
+        android:id="@+id/ciclos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iniciarTempo;
     private ImageView reiniciarTempo;
     private ImageView pausarTempo;
+    private TextView ciclos;
+    private TextView descansoTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         iniciarTempo  =findViewById(R.id.play);
         pausarTempo = findViewById(R.id.pausa);
         reiniciarTempo = findViewById(R.id.reiniciar);
+        descansoTime = findViewById(R.id.descansotime);
+        ciclos = findViewById(R.id.ciclos);
 
 
 
@@ -53,8 +57,38 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(Integer integer) {
                         if (integer == 0) {
+                            int i = 1 ;
+                            int numCiclos = 4;
                             tempoViewModel.getTempo().setValue(STARTING_TIME);
                             tempoViewModel.iniciarDescanso();
+                            tempoViewModel.getDescanso().observe(MainActivity.this, new Observer<Integer>() {
+                                @Override
+                                public void onChanged(Integer integer) {
+                                    if (integer == 0) {
+
+                                        tempoViewModel.getDescanso().setValue(300);
+
+
+
+
+                                    }
+                                    int minutos = integer / 60 ;
+                                    int segundos = integer % 60;
+
+                                    String tiempoRestanteDescanso = String.format(Locale.getDefault(),"%02d:%02d",minutos,segundos);
+
+                                    descansoTime.setText("Tiempo de descanso : " + tiempoRestanteDescanso);
+
+                                }
+                            });
+
+
+
+
+                            if (i == numCiclos){
+                                ciclos.setText("ciclo" +  i  +  "de " + numCiclos );
+                            }
+                            i++;
                         }
                         int minutos = integer / 60 ;
                         int segundos = integer % 60;
@@ -85,8 +119,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
             }
         });
+
+        //FALTA BOTON QUE MANDE A EDITAR
 
 
 
