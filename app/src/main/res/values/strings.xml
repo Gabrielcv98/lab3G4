@@ -14,5 +14,15 @@
     <string name="reiniciar">TODO</string>
 
     <string name="temporizador">00:00:00</string>
+    <string name="es_un_m_todo_de_gesti_n_del_tiempo_desarrollado_por_francesco_cirillo_a_finales_de_los_80_esta_t_cnica_utiliza_un_temporizador_para_dividir_las_tareas_en_un_conjunto_de_intervalos_separados_por_descansos_la_t_cnica_pomodoro_aumenta_la_productividad_tomando_descansos_cortos_programados_con_regularidad_luego_de_algunos_ciclos_de_trabajo_y_descansos_cortos_es_posible_que_el_usuario_tome_un_descanso_mas_largo">Es un método de gestión del tiempo desarrollado por Francesco Cirillo a finales de los 80. Esta técnica utiliza un temporizador para dividir las tareas en un conjunto de intervalos separados por descansos. La técnica Pomodoro aumenta la productividad tomando descansos cortos programados con regularidad. Luego de algunos ciclos de trabajo y descansos cortos, es posible que el usuario tome un descanso mas largo.</string>
+    <string name="acerca_de_la_t_cnica_pomodoro">Acerca de la Técnica Pomodoro</string>
+    <string name="pasos_para_utilizar_los_temporizadores">Pasos para utilizar los temporizadores</string>
+    <string name="_2_trabaja_en_la_tarea_hasta_que_se_complete_el_temporizador">4. Luego de finalizar el descanso de 15 minutos, el usuario puede volver a empezar ciclos de trabajo Pomodoro.</string>
+    <string name="_1_establezca_los_temporizadores_en_25_minutos_para_un_pomodoro">1. Establezca temporizadores de 25 minutos para cumplir una tarea.</string>
+    <string name="_2_despu_s_de_completar_el_temporizador_ponga_una_marca_de_verificaci_n_en_su_lista_de_tareas_y_t_mese_un_breve_descanso_de_5_minutos">2. Después de completar el temporizador, ponga una marca de verificación en su lista de tareas y tómese un breve descanso de 5 minutos.</string>
+    <string name="_3_estos_30_minutos_conforman_un_solo_ciclo_pomodor">3. Estos 30 minutos conforman un solo ciclo Pomodoro. Al finalizar 4 ciclos pomodoro, el usuario puede tomar un descanso largo de 15 minutos.</string>
+    <string name="_5_por_defecto_estos_son_nlos_tiempos_de_los_temporizadores_de_pomodoro_sin_embargo_el_usuario_puede_editar_el_tiempo_de_esos_temporizadores_e_incluso_la_cantidad_de_ciclos_pomodoro">5. Por defecto, estos son los tiempos de los temporizadores de Pomodoro; sin embargo, el usuario puede editar el tiempo de esos temporizadores e incluso la cantidad de ciclos Pomodoro.</string>
+    <string name="item">Item</string>
+
 
 </resources>

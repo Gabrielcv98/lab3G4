@@ -7,14 +7,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Locale;
 
+import pe.edu.pucp.tel306.ViewModels.Help;
 import pe.edu.pucp.tel306.ViewModels.TempoViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -92,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         //iniciarTempo.setOnClickListener(new View.OnClickListener(){
 
 
@@ -105,5 +109,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menubar,menu);
+        return true;
+    }
+
+
+    public void help(View view){
+        Intent intent = new Intent(MainActivity.this, Help.class);
+        int requestCode =1;
+        startActivityForResult(intent,requestCode);
+    }
+
 
 }
