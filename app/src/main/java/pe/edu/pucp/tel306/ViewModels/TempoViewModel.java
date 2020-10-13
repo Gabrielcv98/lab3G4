@@ -1,7 +1,7 @@
 package pe.edu.pucp.tel306.ViewModels;
 
 
-import android.os.CountDownTimer;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.lifecycle.MutableLiveData;
@@ -10,30 +10,67 @@ import androidx.lifecycle.ViewModel;
 public class TempoViewModel extends ViewModel {
 
 
-    private MutableLiveData<Integer> contador = new MutableLiveData<>();
+    private MutableLiveData<Integer> tempo = new MutableLiveData<>(1500);
     private Thread thread = null;
 
 
-    public void iniciarTemporizador(final TextView temporizador){
-        if(thread == null){
+    public void iniciarTemporizador(){
 
-            new CountDownTimer(2500, 1000) {
+        if (getThread() == null) {
+
+            setThread(new Thread(new Runnable() {
                 @Override
-                public void onTick(long millisUntilFinished) {
-                    temporizador.setText("" + millisUntilFinished / 1000);
+                public void run() {
 
+                    int tempoLocal = getTempo().getValue();
+
+                    for (; tempoLocal >= 0; tempoLocal--) {
+                        Log.d("tempoApp", String.valueOf(tempoLocal));
+
+                        getTempo().postValue(tempoLocal);
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            break;
+                        }
+                    }
+                    setThread(null);
+                    if(tempoLocal == 0) {
+                        getTempo().postValue(tempoLocal);
+                    }
                 }
+            }));
 
-                @Override
-                public void onFinish() {
-
-                }
-            }.start();
-
-
-
+            getThread().start();
         }
 
 
+
+
+
+    }
+
+    public void detenerTemporizador(){
+        if(thread != null){
+            thread.interrupt();
+        }
+    }
+
+    public MutableLiveData<Integer> getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(MutableLiveData<Integer> tempo) {
+        this.tempo = tempo;
+    }
+
+    public Thread getThread() {
+        return thread;
+    }
+
+    public void setThread(Thread thread) {
+        this.thread = thread;
     }
 }

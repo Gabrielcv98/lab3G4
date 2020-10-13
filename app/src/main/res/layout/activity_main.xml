@@ -34,15 +34,16 @@
 
     <TextView
         android:id="@+id/temporizador"
-        android:layout_width="71dp"
-        android:layout_height="145dp"
-        android:layout_marginBottom="340dp"
+        android:layout_width="256dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="396dp"
         android:singleLine="false"
         android:text="@string/temporizador"
         android:textAlignment="center"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -78,4 +79,5 @@
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
