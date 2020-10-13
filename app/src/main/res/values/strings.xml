@@ -5,4 +5,5 @@
     <string name="tiempo_de_descanso">tiempo de descanso :</string>
     <string name="ciclo_pomodoro">ciclo pomodoro</string>
     <string name="reiniciar">TODO</string>
+    <string name="temporizador">00:00:00</string>
 </resources>
